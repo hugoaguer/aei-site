@@ -54,7 +54,7 @@ img {
 }
 
 .nav {
-  height: 78px;
+  min-height: 88px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -63,24 +63,13 @@ img {
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
-  color: #ffffff;
 }
 
-.logo-mark {
-  display: inline-grid;
-  place-items: center;
-  background: var(--accent);
-  color: #ffffff;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  padding: 7px 10px;
-  border-radius: 5px;
-}
-
-.logo-text {
-  font-size: 0.85rem;
-  font-weight: 700;
+.logo-image {
+  height: 68px;
+  width: auto;
+  max-width: 230px;
+  object-fit: contain;
 }
 
 .menu {
@@ -240,11 +229,12 @@ h1 span {
   bottom: 38px;
 }
 
-.badge {
-  font-size: 3.8rem;
-  font-weight: 900;
-  letter-spacing: 0.06em;
-  color: var(--accent);
+.hero-logo {
+  width: 180px;
+  max-height: 95px;
+  object-fit: contain;
+  object-position: left center;
+  margin-bottom: 12px;
 }
 
 .hero-card h2 {
@@ -574,6 +564,18 @@ footer {
   gap: 40px;
 }
 
+.footer-logo-link {
+  display: inline-block;
+  margin-bottom: 18px;
+}
+
+.footer-logo-image {
+  width: 180px;
+  max-height: 90px;
+  object-fit: contain;
+  object-position: left center;
+}
+
 footer strong {
   color: #ffffff;
   display: block;
@@ -591,17 +593,13 @@ footer a:hover {
   color: #ffffff;
 }
 
-.footer-logo {
-  margin-bottom: 15px;
-}
-
 
 /* TABLETTE */
 
 @media (max-width: 900px) {
 
-  .logo-text {
-    display: none;
+  .logo-image {
+    height: 58px;
   }
 
   .menu-btn {
@@ -611,7 +609,7 @@ footer a:hover {
   .menu {
     display: none;
     position: absolute;
-    top: 78px;
+    top: 88px;
     left: 0;
     right: 0;
     background: #0b1118;
@@ -667,6 +665,19 @@ footer a:hover {
 
 @media (max-width: 560px) {
 
+  .nav {
+    min-height: 78px;
+  }
+
+  .logo-image {
+    height: 48px;
+    max-width: 180px;
+  }
+
+  .menu {
+    top: 78px;
+  }
+
   .cards {
     grid-template-columns: 1fr;
   }
@@ -689,12 +700,20 @@ footer a:hover {
     bottom: 24px;
   }
 
+  .hero-logo {
+    width: 150px;
+  }
+
   .project-image-wrapper {
     height: 260px;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .footer-logo-image {
+    width: 150px;
   }
 
 }
