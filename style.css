@@ -1,7 +1,3 @@
-/* =========================================
-   RESET / VARIABLES
-========================================= */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -53,17 +49,13 @@ img {
   position: sticky;
   top: 0;
   z-index: 100;
-
   background: rgba(11, 17, 24, 0.96);
-
   backdrop-filter: blur(10px);
-
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .nav {
   min-height: 88px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -73,18 +65,14 @@ img {
   height: 68px;
   width: auto;
   max-width: 230px;
-
   object-fit: contain;
 }
 
 .menu {
   display: flex;
   align-items: center;
-
   gap: 28px;
-
   color: #dbe4ef;
-
   font-size: 0.94rem;
 }
 
@@ -98,14 +86,10 @@ img {
 
 .menu-btn {
   display: none;
-
   border: 0;
-
   background: transparent;
   color: #ffffff;
-
   font-size: 1.8rem;
-
   cursor: pointer;
 }
 
@@ -118,22 +102,14 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   padding: 14px 22px;
-
   border: 0;
   border-radius: 6px;
-
   background: var(--accent);
   color: #ffffff;
-
   font-weight: 800;
-
   cursor: pointer;
-
-  transition:
-    transform 0.2s ease,
-    filter 0.2s ease;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .btn:hover {
@@ -147,63 +123,48 @@ img {
 
 .btn-outline {
   background: transparent;
-
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 
 /* =========================================
-   HERO
+   ACCUEIL
 ========================================= */
 
 .hero {
   min-height: 690px;
-
   display: flex;
   align-items: center;
-
   background:
     radial-gradient(
       circle at 80% 20%,
       #203142 0,
       #0b1118 46%
     );
-
   color: #ffffff;
 }
 
 .hero-grid {
   display: grid;
-
   grid-template-columns: 1.15fr 0.85fr;
-
   gap: 70px;
-
   align-items: center;
-
   padding: 90px 0;
 }
 
 .eyebrow {
   margin-bottom: 14px;
-
   color: var(--accent);
-
   text-transform: uppercase;
-
   letter-spacing: 0.18em;
-
   font-size: 0.76rem;
   font-weight: 900;
 }
 
 h1 {
   max-width: 850px;
-
   font-size: clamp(2.7rem, 5vw, 5.4rem);
-
   line-height: 0.98;
-
   letter-spacing: -0.05em;
 }
 
@@ -213,31 +174,23 @@ h1 span {
 
 .lead {
   max-width: 720px;
-
   margin: 28px 0;
-
   color: #b8c4d0;
-
   font-size: 1.12rem;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-
   gap: 12px;
 }
 
 .trust {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   gap: 18px;
-
   margin-top: 54px;
   padding-top: 25px;
-
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -248,51 +201,38 @@ h1 span {
 
 .trust span {
   margin-top: 4px;
-
   color: #8493a3;
-
   font-size: 0.78rem;
 }
 
 
 /* =========================================
-   HERO CARD
+   BLOC A.E.I
 ========================================= */
 
 .hero-card {
   position: relative;
-
   min-height: 430px;
-
   overflow: hidden;
-
   border: 1px solid rgba(255, 255, 255, 0.12);
-
   border-radius: 16px;
-
   background: linear-gradient(145deg, #172432, #0d141d);
-
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
 }
 
 .metal-lines {
   position: absolute;
-
   inset: -80px;
-
-  background:
-    repeating-linear-gradient(
-      120deg,
-      transparent 0 24px,
-      rgba(255, 255, 255, 0.025) 25px 27px
-    );
-
+  background: repeating-linear-gradient(
+    120deg,
+    transparent 0 24px,
+    rgba(255, 255, 255, 0.025) 25px 27px
+  );
   transform: rotate(6deg);
 }
 
 .hero-card-content {
   position: absolute;
-
   left: 38px;
   right: 38px;
   bottom: 38px;
@@ -300,34 +240,26 @@ h1 span {
 
 .hero-logo {
   width: 180px;
-
   max-height: 95px;
-
   object-fit: contain;
   object-position: left;
-
   margin-bottom: 12px;
 }
 
 .hero-card h2 {
   font-size: 2rem;
-
   margin: 8px 0;
 }
 
 .hero-card p {
   color: #9baaba;
-
   margin-bottom: 18px;
 }
 
 .hero-card li {
   list-style: none;
-
   padding: 8px 0;
-
   color: #dbe4ef;
-
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -346,7 +278,6 @@ h1 span {
 
 .section-heading {
   max-width: 760px;
-
   margin-bottom: 48px;
 }
 
@@ -355,11 +286,8 @@ h1 span {
 .contact-grid h2,
 .cta h2 {
   margin-bottom: 18px;
-
   font-size: clamp(2rem, 3.5vw, 3.6rem);
-
   line-height: 1.08;
-
   letter-spacing: -0.04em;
 }
 
@@ -375,23 +303,16 @@ h1 span {
 
 .cards {
   display: grid;
-
   grid-template-columns: repeat(4, 1fr);
-
   gap: 18px;
 }
 
 .card {
   min-height: 260px;
-
   padding: 30px;
-
   border: 1px solid var(--line);
-
   border-radius: 10px;
-
   background: #ffffff;
-
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
@@ -399,38 +320,28 @@ h1 span {
 
 .card:hover {
   transform: translateY(-5px);
-
-  box-shadow:
-    0 16px 40px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
 }
 
 .icon {
   width: 48px;
   height: 48px;
-
   display: grid;
   place-items: center;
-
   margin-bottom: 28px;
-
   border-radius: 8px;
-
   background: #fff3e9;
-
   color: var(--accent);
-
   font-size: 1.6rem;
 }
 
 .card h3 {
   margin-bottom: 10px;
-
   font-size: 1.15rem;
 }
 
 .card p {
   color: var(--muted);
-
   font-size: 0.92rem;
 }
 
@@ -441,59 +352,44 @@ h1 span {
 
 .dark {
   background: var(--bg);
-
   color: #ffffff;
 }
 
 .split {
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: 80px;
-
   align-items: center;
 }
 
 .muted {
   max-width: 620px;
-
   color: #9baaba;
 }
 
 .check-list {
   display: grid;
-
   gap: 12px;
-
   margin-top: 32px;
-
   color: #dfe7ef;
 }
 
 .stats {
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .stat {
   min-height: 150px;
-
   padding: 34px;
-
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .stat strong {
   display: block;
-
   margin-bottom: 20px;
-
   color: var(--accent);
-
   font-size: 2rem;
 }
 
@@ -521,15 +417,12 @@ h1 span {
 .realisation-title {
   display: flex;
   align-items: center;
-
   gap: 20px;
-
   margin-bottom: 22px;
 }
 
 .realisation-title > span {
   color: #9aa4b2;
-
   font-size: 2rem;
   font-weight: 800;
 }
@@ -545,38 +438,30 @@ h1 span {
 
 .carousel {
   position: relative;
-
   width: 100%;
   max-width: 1000px;
-
   margin: 0 auto;
 }
 
 
 /*
-  Cadre du carrousel.
-  Il n'y a plus de fond noir.
+  IMPORTANT :
+  fond clair + image entière visible.
 */
 
 .carousel-viewport {
   width: 100%;
-  height: 520px;
-
+  height: 620px;
   overflow: hidden;
 
   border-radius: 16px;
 
-  background: #ffffff;
+  background: #f8fafc;
 
   box-shadow:
     0 15px 45px rgba(15, 23, 42, 0.12);
 }
 
-
-/*
-  Toutes les photos sont placées
-  horizontalement.
-*/
 
 .carousel-track {
   display: flex;
@@ -588,29 +473,30 @@ h1 span {
 }
 
 
-/*
-  Chaque photo prend exactement
-  toute la taille du carrousel.
-*/
-
 .carousel-slide {
   flex: 0 0 100%;
 
   width: 100%;
   min-width: 100%;
 
-  height: 520px;
+  height: 620px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
 
   overflow: hidden;
 
-  background: #ffffff;
+  background: #f8fafc;
 }
 
 
 /*
-  IMPORTANT :
-  La photo remplit TOUT le cadre.
-  Les bandes noires disparaissent.
+  CORRECTION PRINCIPALE
+
+  contain = affiche toute la photo
+  sans couper les bords.
 */
 
 .carousel-slide img {
@@ -619,23 +505,22 @@ h1 span {
   width: 100% !important;
   height: 100% !important;
 
-  min-width: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
 
-  max-width: none !important;
-
-  object-fit: cover !important;
-
+  object-fit: contain !important;
   object-position: center center !important;
 
-  background: transparent !important;
+  background: #f8fafc !important;
 
   cursor: zoom-in;
 
   transition: transform 0.35s ease;
 }
 
+
 .carousel-slide img:hover {
-  transform: scale(1.015);
+  transform: scale(1.01);
 }
 
 
@@ -654,20 +539,21 @@ h1 span {
   height: 52px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
   padding: 0;
 
   border: none;
-
   border-radius: 50%;
 
-  background: rgba(4, 22, 39, 0.90);
+  background: rgba(4, 22, 39, 0.9);
 
   color: #ffffff;
 
   font-size: 36px;
+
   line-height: 1;
 
   cursor: pointer;
@@ -682,6 +568,7 @@ h1 span {
     transform 0.2s ease;
 }
 
+
 .carousel-btn:hover {
   background: var(--accent);
 
@@ -690,18 +577,16 @@ h1 span {
     scale(1.08);
 }
 
+
 .carousel-prev {
   left: 18px;
 }
+
 
 .carousel-next {
   right: 18px;
 }
 
-
-/* =========================================
-   COMPTEUR
-========================================= */
 
 .carousel-counter {
   margin-top: 14px;
@@ -711,6 +596,7 @@ h1 span {
   color: #64748b;
 
   font-size: 0.85rem;
+
   font-weight: 600;
 
   letter-spacing: 0.05em;
@@ -738,21 +624,26 @@ h1 span {
   background: rgba(4, 7, 11, 0.95);
 }
 
+
 .image-modal.active {
   display: flex;
 }
 
+
 .image-modal img {
   width: auto;
+
   height: auto;
 
   max-width: 94vw;
+
   max-height: 90vh;
 
   object-fit: contain;
 
   border-radius: 8px;
 }
+
 
 .image-modal-close {
   position: absolute;
@@ -787,18 +678,22 @@ h1 span {
   color: #ffffff;
 }
 
+
 .cta .eyebrow {
   color: #ffffff;
 }
+
 
 .cta-inner {
   display: flex;
 
   justify-content: space-between;
+
   align-items: center;
 
   gap: 30px;
 }
+
 
 .btn-light {
   background: #ffffff;
@@ -819,6 +714,7 @@ h1 span {
   gap: 70px;
 }
 
+
 .contact-items {
   display: grid;
 
@@ -827,16 +723,19 @@ h1 span {
   margin-top: 36px;
 }
 
+
 .contact-items div {
   padding: 16px 0;
 
   border-bottom: 1px solid var(--line);
 }
 
+
 .contact-items span,
 .contact-items strong {
   display: block;
 }
+
 
 .contact-items span {
   color: var(--muted);
@@ -847,6 +746,7 @@ h1 span {
 
   letter-spacing: 0.12em;
 }
+
 
 .contact-form {
   display: grid;
@@ -862,11 +762,13 @@ h1 span {
   background: #ffffff;
 }
 
+
 label {
   font-size: 0.9rem;
 
   font-weight: 700;
 }
+
 
 input,
 textarea {
@@ -885,9 +787,11 @@ textarea {
   font: inherit;
 }
 
+
 textarea {
   resize: vertical;
 }
+
 
 small {
   color: var(--muted);
@@ -906,6 +810,7 @@ footer {
   color: #98a6b5;
 }
 
+
 .footer-grid {
   display: grid;
 
@@ -913,6 +818,7 @@ footer {
 
   gap: 40px;
 }
+
 
 .footer-logo-image {
   width: 180px;
@@ -922,6 +828,7 @@ footer {
   object-fit: contain;
 }
 
+
 footer strong {
   display: block;
 
@@ -929,6 +836,7 @@ footer strong {
 
   color: #ffffff;
 }
+
 
 footer a,
 footer span {
@@ -939,13 +847,13 @@ footer span {
   font-size: 0.9rem;
 }
 
+
 .footer-bottom {
   margin-top: 35px;
 
   padding-top: 20px;
 
-  border-top:
-    1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 
@@ -959,6 +867,7 @@ footer span {
     display: block;
   }
 
+
   .menu {
     position: absolute;
 
@@ -969,6 +878,7 @@ footer span {
     display: none;
 
     flex-direction: column;
+
     align-items: flex-start;
 
     padding: 20px 4%;
@@ -976,9 +886,11 @@ footer span {
     background: #0b1118;
   }
 
+
   .menu.open {
     display: flex;
   }
+
 
   .hero-grid,
   .split,
@@ -986,13 +898,15 @@ footer span {
     grid-template-columns: 1fr;
   }
 
+
   .cards {
     grid-template-columns: 1fr 1fr;
   }
 
+
   .carousel-viewport,
   .carousel-slide {
-    height: 440px;
+    height: 520px;
   }
 
 }
@@ -1008,14 +922,17 @@ footer span {
     padding: 70px 0;
   }
 
+
   .cards,
   .stats {
     grid-template-columns: 1fr;
   }
 
+
   .trust {
     grid-template-columns: 1fr;
   }
+
 
   .hero-grid {
     grid-template-columns: 1fr;
@@ -1023,43 +940,53 @@ footer span {
     padding: 65px 0;
   }
 
+
   .carousel-viewport,
   .carousel-slide {
-    height: 320px;
+    height: 330px;
   }
+
 
   .carousel-viewport {
     border-radius: 12px;
   }
 
+
   .carousel-btn {
     width: 42px;
+
     height: 42px;
 
     font-size: 29px;
   }
 
+
   .carousel-prev {
     left: 10px;
   }
+
 
   .carousel-next {
     right: 10px;
   }
 
+
   .realisation-title > span {
     font-size: 1.5rem;
   }
 
+
   .realisation-title h3 {
     font-size: 1.2rem;
   }
+
 
   .cta-inner {
     flex-direction: column;
 
     align-items: flex-start;
   }
+
 
   .footer-grid {
     grid-template-columns: 1fr;
