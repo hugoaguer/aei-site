@@ -34,31 +34,42 @@ if (year) {
 
 
 // ==========================================
-// GALERIES HORIZONTALES
+// SCROLL DES GALERIES
 // ==========================================
 
 document.querySelectorAll('.horizontal-gallery').forEach(gallery => {
 
-  const scrollArea = gallery.querySelector('.gallery-scroll');
+  const scrollArea =
+    gallery.querySelector('.gallery-scroll');
 
-  const leftButton = gallery.querySelector('.scroll-left');
+  const leftButton =
+    gallery.querySelector('.scroll-left');
 
-  const rightButton = gallery.querySelector('.scroll-right');
+  const rightButton =
+    gallery.querySelector('.scroll-right');
+
+
+  if (!scrollArea || !leftButton || !rightButton) {
+    return;
+  }
 
 
   function getScrollAmount() {
 
-    const photo = scrollArea.querySelector('.gallery-photo');
+    const photo =
+      scrollArea.querySelector('.gallery-photo');
 
     if (!photo) {
-      return 300;
+      return 250;
     }
 
-    const gap = parseFloat(
-      window.getComputedStyle(scrollArea).gap
-    ) || 0;
+    const styles =
+      window.getComputedStyle(scrollArea);
 
-    return photo.offsetWidth + gap;
+    const gap =
+      parseFloat(styles.columnGap || styles.gap) || 14;
+
+    return photo.getBoundingClientRect().width + gap;
 
   }
 
@@ -86,7 +97,7 @@ document.querySelectorAll('.horizontal-gallery').forEach(gallery => {
 
 
 // ==========================================
-// AGRANDISSEMENT DES PHOTOS
+// AGRANDISSEMENT PHOTOS
 // ==========================================
 
 const imageModal =
@@ -99,21 +110,26 @@ const imageModalClose =
   document.getElementById('imageModalClose');
 
 
-document.querySelectorAll('.gallery-photo img').forEach(image => {
+document
+  .querySelectorAll('.gallery-photo img')
+  .forEach(image => {
 
-  image.addEventListener('click', () => {
+    image.addEventListener('click', () => {
 
-    imageModalContent.src = image.src;
+      if (!imageModal || !imageModalContent) {
+        return;
+      }
 
-    imageModalContent.alt = image.alt;
+      imageModalContent.src = image.src;
+      imageModalContent.alt = image.alt;
 
-    imageModal.classList.add('active');
+      imageModal.classList.add('active');
 
-    document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+
+    });
 
   });
-
-});
 
 
 function closeImageModal() {
@@ -124,7 +140,9 @@ function closeImageModal() {
 
   imageModal.classList.remove('active');
 
-  imageModalContent.src = '';
+  if (imageModalContent) {
+    imageModalContent.src = '';
+  }
 
   document.body.style.overflow = '';
 
