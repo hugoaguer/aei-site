@@ -270,15 +270,9 @@ h1 span {
 
   border-radius: 16px;
 
-  background:
-    linear-gradient(
-      145deg,
-      #172432,
-      #0d141d
-    );
+  background: linear-gradient(145deg, #172432, #0d141d);
 
-  box-shadow:
-    0 30px 90px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
 }
 
 .metal-lines {
@@ -553,7 +547,6 @@ h1 span {
   position: relative;
 
   width: 100%;
-
   max-width: 1000px;
 
   margin: 0 auto;
@@ -561,8 +554,8 @@ h1 span {
 
 
 /*
-  Fenêtre du carrousel.
-  Toutes les photos ont exactement le même cadre.
+  Cadre du carrousel.
+  Il n'y a plus de fond noir.
 */
 
 .carousel-viewport {
@@ -581,7 +574,8 @@ h1 span {
 
 
 /*
-  Les photos sont placées horizontalement.
+  Toutes les photos sont placées
+  horizontalement.
 */
 
 .carousel-track {
@@ -590,14 +584,13 @@ h1 span {
   width: 100%;
   height: 100%;
 
-  transition:
-    transform 0.5s ease;
+  transition: transform 0.5s ease;
 }
 
 
 /*
-  Chaque slide occupe exactement
-  toute la largeur du carrousel.
+  Chaque photo prend exactement
+  toute la taille du carrousel.
 */
 
 .carousel-slide {
@@ -605,7 +598,8 @@ h1 span {
 
   width: 100%;
   min-width: 100%;
-  height: 100%;
+
+  height: 520px;
 
   overflow: hidden;
 
@@ -615,31 +609,30 @@ h1 span {
 
 /*
   IMPORTANT :
-  object-fit: cover supprime les grosses
-  bandes noires autour des photos.
+  La photo remplit TOUT le cadre.
+  Les bandes noires disparaissent.
 */
 
 .carousel-slide img {
-  display: block;
+  display: block !important;
 
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
 
-  object-fit: cover;
-  object-position: center;
+  min-width: 100% !important;
 
-  background: #ffffff;
+  max-width: none !important;
+
+  object-fit: cover !important;
+
+  object-position: center center !important;
+
+  background: transparent !important;
 
   cursor: zoom-in;
 
-  transition:
-    transform 0.35s ease;
+  transition: transform 0.35s ease;
 }
-
-
-/*
-  Petit effet propre au survol.
-*/
 
 .carousel-slide img:hover {
   transform: scale(1.015);
@@ -707,7 +700,7 @@ h1 span {
 
 
 /* =========================================
-   COMPTEUR CARROUSEL
+   COMPTEUR
 ========================================= */
 
 .carousel-counter {
@@ -742,8 +735,7 @@ h1 span {
 
   padding: 30px;
 
-  background:
-    rgba(4, 7, 11, 0.95);
+  background: rgba(4, 7, 11, 0.95);
 }
 
 .image-modal.active {
@@ -998,7 +990,8 @@ footer span {
     grid-template-columns: 1fr 1fr;
   }
 
-  .carousel-viewport {
+  .carousel-viewport,
+  .carousel-slide {
     height: 440px;
   }
 
@@ -1030,9 +1023,12 @@ footer span {
     padding: 65px 0;
   }
 
-  .carousel-viewport {
+  .carousel-viewport,
+  .carousel-slide {
     height: 320px;
+  }
 
+  .carousel-viewport {
     border-radius: 12px;
   }
 
