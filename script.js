@@ -16,7 +16,6 @@ if (menuBtn && menu) {
     });
 
   });
-
 }
 
 
@@ -29,9 +28,7 @@ if (year) {
 }
 
 
-// ==========================================
-// CARROUSELS - UNE PHOTO A LA FOIS
-// ==========================================
+// CARROUSELS
 
 document.querySelectorAll('[data-carousel]').forEach(carousel => {
 
@@ -92,7 +89,7 @@ document.querySelectorAll('[data-carousel]').forEach(carousel => {
   });
 
 
-  // SWIPE TELEPHONE
+  // SWIPE SUR TELEPHONE
 
   let startX = 0;
 
@@ -100,8 +97,7 @@ document.querySelectorAll('[data-carousel]').forEach(carousel => {
     'touchstart',
     event => {
 
-      startX =
-        event.touches[0].clientX;
+      startX = event.touches[0].clientX;
 
     },
     {
@@ -158,9 +154,7 @@ document.querySelectorAll('[data-carousel]').forEach(carousel => {
 });
 
 
-// ==========================================
 // PHOTO EN GRAND
-// ==========================================
 
 const imageModal =
   document.getElementById('imageModal');
@@ -201,6 +195,8 @@ function closeModal() {
   }
 
   imageModal.classList.remove('active');
+
+  imageModalContent.src = '';
 
   document.body.style.overflow = '';
 
