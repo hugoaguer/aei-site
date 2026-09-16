@@ -1,3 +1,7 @@
+/* =========================================
+   RESET
+========================================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -109,7 +113,9 @@ img {
   color: #ffffff;
   font-weight: 800;
   cursor: pointer;
-  transition: transform 0.2s ease, filter 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
 }
 
 .btn:hover {
@@ -445,73 +451,65 @@ h1 span {
 
 
 /*
-  IMPORTANT :
-  fond clair + image entière visible.
+   Le carrousel n'a PLUS de hauteur fixe.
+
+   La hauteur est déterminée automatiquement
+   par la photo afin qu'elle soit visible
+   entièrement.
 */
 
 .carousel-viewport {
   width: 100%;
-  height: 620px;
   overflow: hidden;
-
   border-radius: 16px;
-
-  background: #f8fafc;
-
-  box-shadow:
-    0 15px 45px rgba(15, 23, 42, 0.12);
+  background: #ffffff;
+  box-shadow: 0 15px 45px rgba(15, 23, 42, 0.12);
 }
 
 
 .carousel-track {
   display: flex;
-
   width: 100%;
-  height: 100%;
-
+  align-items: flex-start;
   transition: transform 0.5s ease;
 }
 
 
 .carousel-slide {
   flex: 0 0 100%;
-
   width: 100%;
   min-width: 100%;
-
-  height: 620px;
-
+  height: auto;
   display: flex;
-
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-
   overflow: hidden;
-
-  background: #f8fafc;
+  background: #ffffff;
 }
 
 
 /*
-  CORRECTION PRINCIPALE
+   IMPORTANT
 
-  contain = affiche toute la photo
-  sans couper les bords.
+   width: 100%
+   height: auto
+
+   = la photo conserve ses proportions
+   et n'est plus coupée.
 */
 
 .carousel-slide img {
   display: block !important;
 
   width: 100% !important;
-  height: 100% !important;
+  height: auto !important;
 
   max-width: 100% !important;
-  max-height: 100% !important;
 
   object-fit: contain !important;
   object-position: center center !important;
 
-  background: #f8fafc !important;
+  background: #ffffff !important;
 
   cursor: zoom-in;
 
@@ -525,7 +523,7 @@ h1 span {
 
 
 /* =========================================
-   FLECHES CARROUSEL
+   FLECHES DU CARROUSEL
 ========================================= */
 
 .carousel-btn {
@@ -539,7 +537,6 @@ h1 span {
   height: 52px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -553,15 +550,13 @@ h1 span {
   color: #ffffff;
 
   font-size: 36px;
-
   line-height: 1;
 
   cursor: pointer;
 
   transform: translateY(-50%);
 
-  box-shadow:
-    0 7px 25px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.25);
 
   transition:
     background 0.2s ease,
@@ -609,9 +604,7 @@ h1 span {
 
 .image-modal {
   position: fixed;
-
   inset: 0;
-
   z-index: 9999;
 
   display: none;
@@ -632,11 +625,9 @@ h1 span {
 
 .image-modal img {
   width: auto;
-
   height: auto;
 
   max-width: 94vw;
-
   max-height: 90vh;
 
   object-fit: contain;
@@ -672,32 +663,23 @@ h1 span {
 
 .cta {
   padding: 60px 0;
-
   background: var(--accent);
-
   color: #ffffff;
 }
-
 
 .cta .eyebrow {
   color: #ffffff;
 }
 
-
 .cta-inner {
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
   gap: 30px;
 }
 
-
 .btn-light {
   background: #ffffff;
-
   color: #111827;
 }
 
@@ -708,90 +690,61 @@ h1 span {
 
 .contact-grid {
   display: grid;
-
   grid-template-columns: 0.8fr 1.2fr;
-
   gap: 70px;
 }
 
-
 .contact-items {
   display: grid;
-
   gap: 16px;
-
   margin-top: 36px;
 }
 
-
 .contact-items div {
   padding: 16px 0;
-
   border-bottom: 1px solid var(--line);
 }
-
 
 .contact-items span,
 .contact-items strong {
   display: block;
 }
 
-
 .contact-items span {
   color: var(--muted);
-
   font-size: 0.75rem;
-
   text-transform: uppercase;
-
   letter-spacing: 0.12em;
 }
 
-
 .contact-form {
   display: grid;
-
   gap: 16px;
-
   padding: 30px;
-
   border: 1px solid var(--line);
-
   border-radius: 10px;
-
   background: #ffffff;
 }
 
-
 label {
   font-size: 0.9rem;
-
   font-weight: 700;
 }
-
 
 input,
 textarea {
   width: 100%;
-
   margin-top: 7px;
-
   padding: 14px;
-
   border: 1px solid #cbd5e1;
-
   border-radius: 6px;
-
   background: #ffffff;
-
   font: inherit;
 }
-
 
 textarea {
   resize: vertical;
 }
-
 
 small {
   color: var(--muted);
@@ -804,55 +757,38 @@ small {
 
 footer {
   padding: 55px 0 30px;
-
   background: #070b10;
-
   color: #98a6b5;
 }
 
-
 .footer-grid {
   display: grid;
-
   grid-template-columns: 1.5fr 1fr 1fr;
-
   gap: 40px;
 }
 
-
 .footer-logo-image {
   width: 180px;
-
   max-height: 90px;
-
   object-fit: contain;
 }
 
-
 footer strong {
   display: block;
-
   margin-bottom: 12px;
-
   color: #ffffff;
 }
-
 
 footer a,
 footer span {
   display: block;
-
   margin: 6px 0;
-
   font-size: 0.9rem;
 }
 
-
 .footer-bottom {
   margin-top: 35px;
-
   padding-top: 20px;
-
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -867,7 +803,6 @@ footer span {
     display: block;
   }
 
-
   .menu {
     position: absolute;
 
@@ -878,7 +813,6 @@ footer span {
     display: none;
 
     flex-direction: column;
-
     align-items: flex-start;
 
     padding: 20px 4%;
@@ -886,11 +820,9 @@ footer span {
     background: #0b1118;
   }
 
-
   .menu.open {
     display: flex;
   }
-
 
   .hero-grid,
   .split,
@@ -898,15 +830,18 @@ footer span {
     grid-template-columns: 1fr;
   }
 
-
   .cards {
     grid-template-columns: 1fr 1fr;
   }
 
+  /*
+     Pas de hauteur fixe ici.
+     L'image garde ses proportions.
+  */
 
-  .carousel-viewport,
-  .carousel-slide {
-    height: 520px;
+  .carousel-slide img {
+    width: 100% !important;
+    height: auto !important;
   }
 
 }
@@ -922,71 +857,60 @@ footer span {
     padding: 70px 0;
   }
 
-
   .cards,
   .stats {
     grid-template-columns: 1fr;
   }
 
-
   .trust {
     grid-template-columns: 1fr;
   }
 
-
   .hero-grid {
     grid-template-columns: 1fr;
-
     padding: 65px 0;
   }
 
-
-  .carousel-viewport,
-  .carousel-slide {
-    height: 330px;
-  }
-
+  /*
+     Toujours aucune hauteur fixe.
+     Le montage complet reste visible.
+  */
 
   .carousel-viewport {
     border-radius: 12px;
   }
 
+  .carousel-slide img {
+    width: 100% !important;
+    height: auto !important;
+  }
 
   .carousel-btn {
     width: 42px;
-
     height: 42px;
-
     font-size: 29px;
   }
-
 
   .carousel-prev {
     left: 10px;
   }
 
-
   .carousel-next {
     right: 10px;
   }
-
 
   .realisation-title > span {
     font-size: 1.5rem;
   }
 
-
   .realisation-title h3 {
     font-size: 1.2rem;
   }
 
-
   .cta-inner {
     flex-direction: column;
-
     align-items: flex-start;
   }
-
 
   .footer-grid {
     grid-template-columns: 1fr;
