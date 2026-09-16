@@ -92,11 +92,12 @@ img {
   border: 0;
   color: #ffffff;
   font-size: 1.8rem;
+  cursor: pointer;
 }
 
 
 /* =========================
-   BOUTONS
+   BUTTONS
 ========================= */
 
 .btn {
@@ -393,172 +394,258 @@ h1 span {
 }
 
 
-/* =========================
+/* =========================================
    REALISATIONS
-========================= */
+========================================= */
 
-.realisation-category {
-  margin-top: 70px;
+.realisations-section {
+  background: #ffffff;
+  overflow: hidden;
 }
 
-.realisation-category:first-of-type {
-  margin-top: 45px;
+.realisations-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 65px;
 }
 
-.realisation-title {
+.realisations-heading > div:first-child {
+  max-width: 760px;
+}
+
+.realisations-heading h2 {
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  margin-bottom: 18px;
+}
+
+.realisations-heading > div:first-child > p:last-child {
+  color: var(--muted);
+  max-width: 700px;
+}
+
+.realisations-values {
   display: flex;
   align-items: center;
-  gap: 18px;
-  margin-bottom: 24px;
+  gap: 16px;
+
+  margin-top: 35px;
+
+  white-space: nowrap;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+
+  color: #778295;
 }
 
-.realisation-title > span {
-  font-size: 3rem;
-  font-weight: 900;
-  color: var(--accent);
-  opacity: 0.25;
+.realisations-values > span {
+  display: block;
+  width: 65px;
+  height: 2px;
+  background: var(--accent);
+}
+
+
+/* =========================================
+   GALERIES
+========================================= */
+
+.gallery-block {
+  margin-bottom: 75px;
+}
+
+.gallery-block:last-child {
+  margin-bottom: 0;
+}
+
+.gallery-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-bottom: 22px;
+}
+
+.gallery-number {
+  font-size: 2.1rem;
   line-height: 1;
+  font-weight: 800;
+  color: #a6afbd;
 }
 
-.realisation-title .eyebrow {
-  margin: 0 0 3px;
+.gallery-line {
+  width: 45px;
+  height: 2px;
+  background: var(--accent);
 }
 
-.realisation-title h3 {
-  margin: 0;
-  font-size: 1.8rem;
-  color: var(--text);
+.gallery-title h3 {
+  font-size: 1.55rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 
-/* =========================
-   CARROUSELS
-========================= */
+/* =========================================
+   SCROLL HORIZONTAL
+========================================= */
 
-.carousel {
+.horizontal-gallery {
   position: relative;
-  width: 100%;
-  max-width: 1050px;
-  margin: 0 auto;
 }
 
-.carousel-viewport {
-  width: 100%;
-  overflow: hidden;
-  background: #0b1118;
-  border-radius: 16px;
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.15);
-}
-
-.carousel-track {
+.gallery-scroll {
   display: flex;
-  transition: transform 0.45s ease;
+  gap: 14px;
+
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  scrollbar-width: none;
+
+  padding: 2px 0 12px;
 }
 
-.carousel-slide {
-  flex: 0 0 100%;
-  height: 570px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #0b1118;
+.gallery-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =========================================
+   PHOTOS
+========================================= */
+
+.gallery-photo {
+  position: relative;
+
+  flex: 0 0 calc((100% - 56px) / 5);
+
+  height: 230px;
+
   overflow: hidden;
+
+  border-radius: 10px;
+
+  background: #e9edf2;
+
+  scroll-snap-align: start;
+
+  cursor: zoom-in;
+
+  box-shadow:
+    0 4px 15px rgba(15, 23, 42, 0.05);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.carousel-slide img {
+.gallery-photo:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 15px 30px rgba(15, 23, 42, 0.14);
+}
+
+.gallery-photo img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  display: block;
-  cursor: zoom-in;
-  transition: transform 0.3s ease;
+
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
 }
 
-.carousel-slide img:hover {
-  transform: scale(1.015);
+.gallery-photo:hover img {
+  transform: scale(1.045);
 }
 
 
-/* =========================
-   FLECHES CARROUSEL
-========================= */
+/* =========================================
+   FLECHES
+========================================= */
 
-.carousel-btn {
+.scroll-btn {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
 
-  width: 52px;
-  height: 52px;
+  transform: translateY(-50%);
+
+  z-index: 10;
+
+  width: 46px;
+  height: 46px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: none;
   border-radius: 50%;
 
-  background: rgba(11, 17, 24, 0.82);
+  background: #0b1725;
   color: #ffffff;
 
-  font-size: 34px;
+  font-size: 32px;
   line-height: 1;
 
   cursor: pointer;
 
-  backdrop-filter: blur(5px);
+  box-shadow:
+    0 6px 20px rgba(15, 23, 42, 0.22);
 
   transition:
     background 0.2s ease,
     transform 0.2s ease;
 }
 
-.carousel-btn:hover {
+.scroll-btn:hover {
   background: var(--accent);
-  transform: translateY(-50%) scale(1.08);
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
 }
 
-.carousel-prev {
-  left: 20px;
+.scroll-left {
+  left: -23px;
 }
 
-.carousel-next {
-  right: 20px;
-}
-
-
-/* =========================
-   COMPTEUR CARROUSEL
-========================= */
-
-.carousel-counter {
-  text-align: center;
-  margin-top: 14px;
-  color: var(--muted);
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+.scroll-right {
+  right: -23px;
 }
 
 
-/* =========================
-   AGRANDISSEMENT PHOTO
-========================= */
+/* =========================================
+   PHOTO PLEIN ECRAN
+========================================= */
 
 .image-modal {
+  display: none;
+
   position: fixed;
   inset: 0;
+
   z-index: 9999;
 
-  display: none;
   align-items: center;
   justify-content: center;
 
-  padding: 30px;
+  padding: 35px;
 
   background: rgba(4, 7, 11, 0.94);
-  backdrop-filter: blur(6px);
+
+  backdrop-filter: blur(8px);
 }
 
 .image-modal.active {
@@ -566,8 +653,6 @@ h1 span {
 }
 
 .image-modal img {
-  display: block;
-
   width: auto;
   height: auto;
 
@@ -578,7 +663,8 @@ h1 span {
 
   border-radius: 8px;
 
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.5);
 }
 
 .image-modal-close {
@@ -590,13 +676,13 @@ h1 span {
   width: 50px;
   height: 50px;
 
-  border: 0;
+  border: none;
+
   background: transparent;
 
   color: #ffffff;
 
   font-size: 48px;
-  line-height: 1;
 
   cursor: pointer;
 }
@@ -674,9 +760,13 @@ h1 span {
 .contact-form {
   display: grid;
   gap: 16px;
+
   background: #ffffff;
+
   border: 1px solid var(--line);
+
   padding: 30px;
+
   border-radius: 10px;
 }
 
@@ -690,9 +780,13 @@ textarea {
   width: 100%;
   margin-top: 7px;
   padding: 14px;
+
   border: 1px solid #cbd5e1;
+
   border-radius: 6px;
+
   font: inherit;
+
   background: #ffffff;
 }
 
@@ -718,7 +812,7 @@ small {
 footer {
   background: #070b10;
   color: #98a6b5;
-  padding: 55px 0;
+  padding: 55px 0 30px;
 }
 
 .footer-grid {
@@ -756,10 +850,16 @@ footer a:hover {
   color: #ffffff;
 }
 
+.footer-bottom {
+  margin-top: 35px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 20px;
+}
 
-/* =========================
+
+/* =========================================
    TABLETTE
-========================= */
+========================================= */
 
 @media (max-width: 900px) {
 
@@ -773,7 +873,9 @@ footer a:hover {
 
   .menu {
     display: none;
+
     position: absolute;
+
     top: 88px;
     left: 0;
     right: 0;
@@ -819,20 +921,36 @@ footer a:hover {
     flex-direction: column;
   }
 
-  .carousel-slide {
-    height: 470px;
+
+  /* GALERIE */
+
+  .realisations-heading {
+    display: block;
   }
 
-  .realisation-category {
-    margin-top: 60px;
+  .realisations-values {
+    margin-top: 25px;
+  }
+
+  .gallery-photo {
+    flex-basis: calc((100% - 28px) / 3);
+    height: 220px;
+  }
+
+  .scroll-left {
+    left: -18px;
+  }
+
+  .scroll-right {
+    right: -18px;
   }
 
 }
 
 
-/* =========================
+/* =========================================
    TELEPHONE
-========================= */
+========================================= */
 
 @media (max-width: 560px) {
 
@@ -875,38 +993,59 @@ footer a:hover {
     width: 150px;
   }
 
-  .realisation-category {
-    margin-top: 50px;
+
+  /* REALISATIONS */
+
+  .realisations-heading {
+    margin-bottom: 50px;
   }
 
-  .realisation-title {
-    gap: 12px;
+  .realisations-values {
+    display: none;
   }
 
-  .realisation-title > span {
-    font-size: 2.2rem;
+  .gallery-block {
+    margin-bottom: 55px;
   }
 
-  .realisation-title h3 {
-    font-size: 1.35rem;
+  .gallery-title {
+    gap: 10px;
   }
 
-  .carousel-slide {
-    height: 330px;
+  .gallery-number {
+    font-size: 1.65rem;
   }
 
-  .carousel-btn {
-    width: 42px;
-    height: 42px;
+  .gallery-line {
+    width: 25px;
+  }
+
+  .gallery-title h3 {
+    font-size: 1.2rem;
+  }
+
+  .gallery-scroll {
+    gap: 10px;
+  }
+
+  .gallery-photo {
+    flex: 0 0 78%;
+    height: 260px;
+  }
+
+  .scroll-btn {
+    width: 40px;
+    height: 40px;
+
     font-size: 27px;
   }
 
-  .carousel-prev {
-    left: 10px;
+  .scroll-left {
+    left: 5px;
   }
 
-  .carousel-next {
-    right: 10px;
+  .scroll-right {
+    right: 5px;
   }
 
   .image-modal {
@@ -917,6 +1056,9 @@ footer a:hover {
     top: 10px;
     right: 10px;
   }
+
+
+  /* FOOTER */
 
   .footer-grid {
     grid-template-columns: 1fr;
