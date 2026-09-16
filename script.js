@@ -1,6 +1,4 @@
-// ==========================================
 // MENU MOBILE
-// ==========================================
 
 const menuBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.menu');
@@ -22,9 +20,7 @@ if (menuBtn && menu) {
 }
 
 
-// ==========================================
 // ANNEE FOOTER
-// ==========================================
 
 const year = document.getElementById('year');
 
@@ -34,70 +30,136 @@ if (year) {
 
 
 // ==========================================
-// SCROLL DES GALERIES
+// CARROUSELS - UNE PHOTO A LA FOIS
 // ==========================================
 
-document.querySelectorAll('.horizontal-gallery').forEach(gallery => {
+document.querySelectorAll('[data-carousel]').forEach(carousel => {
 
-  const scrollArea =
-    gallery.querySelector('.gallery-scroll');
+  const track =
+    carousel.querySelector('.carousel-track');
 
-  const leftButton =
-    gallery.querySelector('.scroll-left');
+  const slides =
+    carousel.querySelectorAll('.carousel-slide');
 
-  const rightButton =
-    gallery.querySelector('.scroll-right');
+  const previousButton =
+    carousel.querySelector('.carousel-prev');
+
+  const nextButton =
+    carousel.querySelector('.carousel-next');
+
+  const counter =
+    carousel.parentElement.querySelector('.carousel-counter');
+
+  let currentIndex = 0;
 
 
-  if (!scrollArea || !leftButton || !rightButton) {
-    return;
-  }
+  function updateCarousel() {
 
+    track.style.transform =
+      `translateX(-${currentIndex * 100}%)`;
 
-  function getScrollAmount() {
-
-    const photo =
-      scrollArea.querySelector('.gallery-photo');
-
-    if (!photo) {
-      return 250;
+    if (counter) {
+      counter.textContent =
+        `${currentIndex + 1} / ${slides.length}`;
     }
 
-    const styles =
-      window.getComputedStyle(scrollArea);
-
-    const gap =
-      parseFloat(styles.columnGap || styles.gap) || 14;
-
-    return photo.getBoundingClientRect().width + gap;
-
   }
 
 
-  rightButton.addEventListener('click', () => {
+  nextButton.addEventListener('click', () => {
 
-    scrollArea.scrollBy({
-      left: getScrollAmount(),
-      behavior: 'smooth'
-    });
+    currentIndex++;
+
+    if (currentIndex >= slides.length) {
+      currentIndex = 0;
+    }
+
+    updateCarousel();
+
+  });
+
+
+  previousButton.addEventListener('click', () => {
+
+    currentIndex--;
+
+    if (currentIndex < 0) {
+      currentIndex = slides.length - 1;
+    }
+
+    updateCarousel();
 
   });
 
 
-  leftButton.addEventListener('click', () => {
+  // SWIPE TELEPHONE
 
-    scrollArea.scrollBy({
-      left: -getScrollAmount(),
-      behavior: 'smooth'
-    });
+  let startX = 0;
 
-  });
+  track.addEventListener(
+    'touchstart',
+    event => {
+
+      startX =
+        event.touches[0].clientX;
+
+    },
+    {
+      passive: true
+    }
+  );
+
+
+  track.addEventListener(
+    'touchend',
+    event => {
+
+      const endX =
+        event.changedTouches[0].clientX;
+
+      const difference =
+        startX - endX;
+
+
+      if (difference > 50) {
+
+        currentIndex++;
+
+        if (currentIndex >= slides.length) {
+          currentIndex = 0;
+        }
+
+        updateCarousel();
+
+      }
+
+
+      if (difference < -50) {
+
+        currentIndex--;
+
+        if (currentIndex < 0) {
+          currentIndex = slides.length - 1;
+        }
+
+        updateCarousel();
+
+      }
+
+    },
+    {
+      passive: true
+    }
+  );
+
+
+  updateCarousel();
 
 });
 
 
 // ==========================================
-// AGRANDISSEMENT PHOTOS
+// PHOTO EN GRAND
 // ==========================================
 
 const imageModal =
@@ -111,7 +173,7 @@ const imageModalClose =
 
 
 document
-  .querySelectorAll('.gallery-photo img')
+  .querySelectorAll('.carousel-slide img')
   .forEach(image => {
 
     image.addEventListener('click', () => {
@@ -132,17 +194,13 @@ document
   });
 
 
-function closeImageModal() {
+function closeModal() {
 
   if (!imageModal) {
     return;
   }
 
   imageModal.classList.remove('active');
-
-  if (imageModalContent) {
-    imageModalContent.src = '';
-  }
 
   document.body.style.overflow = '';
 
@@ -153,7 +211,7 @@ if (imageModalClose) {
 
   imageModalClose.addEventListener(
     'click',
-    closeImageModal
+    closeModal
   );
 
 }
@@ -164,7 +222,7 @@ if (imageModal) {
   imageModal.addEventListener('click', event => {
 
     if (event.target === imageModal) {
-      closeImageModal();
+      closeModal();
     }
 
   });
@@ -175,7 +233,7 @@ if (imageModal) {
 document.addEventListener('keydown', event => {
 
   if (event.key === 'Escape') {
-    closeImageModal();
+    closeModal();
   }
 
 });
