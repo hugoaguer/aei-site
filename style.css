@@ -1,7 +1,3 @@
-/* =========================================
-   RESET
-========================================= */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -113,9 +109,7 @@ img {
   color: #ffffff;
   font-weight: 800;
   cursor: pointer;
-  transition:
-    transform 0.2s ease,
-    filter 0.2s ease;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .btn:hover {
@@ -134,7 +128,7 @@ img {
 
 
 /* =========================================
-   ACCUEIL
+   HERO / ACCUEIL
 ========================================= */
 
 .hero {
@@ -182,7 +176,8 @@ h1 span {
   max-width: 720px;
   margin: 28px 0;
   color: #b8c4d0;
-  font-size: 1.12rem;
+  font-size: 1.02rem;
+  line-height: 1.7;
 }
 
 .hero-actions {
@@ -218,55 +213,111 @@ h1 span {
 
 .hero-card {
   position: relative;
-  min-height: 430px;
+
+  width: 100%;
+  min-height: 540px;
+
   overflow: hidden;
+
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
-  background: linear-gradient(145deg, #172432, #0d141d);
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+
+  background:
+    linear-gradient(
+      145deg,
+      #172432,
+      #0d141d
+    );
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.35);
 }
 
 .metal-lines {
   position: absolute;
   inset: -80px;
-  background: repeating-linear-gradient(
-    120deg,
-    transparent 0 24px,
-    rgba(255, 255, 255, 0.025) 25px 27px
-  );
+
+  background:
+    repeating-linear-gradient(
+      120deg,
+      transparent 0 24px,
+      rgba(255, 255, 255, 0.025) 25px 27px
+    );
+
   transform: rotate(6deg);
 }
 
 .hero-card-content {
-  position: absolute;
-  left: 38px;
-  right: 38px;
-  bottom: 38px;
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  padding: 38px;
 }
+
+
+/* LOGO DANS LE BLOC */
 
 .hero-logo {
-  width: 180px;
-  max-height: 95px;
+  display: block;
+
+  width: 190px;
+  height: auto;
+
+  max-width: 100%;
+  max-height: 100px;
+
   object-fit: contain;
-  object-position: left;
-  margin-bottom: 12px;
+  object-position: left center;
+
+  margin: 0 0 22px 0;
 }
+
+
+/* TITRE A.E.I */
 
 .hero-card h2 {
+  margin: 0 0 8px 0;
+
+  color: #ffffff;
+
   font-size: 2rem;
-  margin: 8px 0;
+  line-height: 1.2;
 }
 
+
+/* AQUITAINE EQUIPEMENT INDUSTRIEL */
+
 .hero-card p {
+  margin: 0 0 20px 0;
+
   color: #9baaba;
-  margin-bottom: 18px;
+
+  font-size: 1rem;
+}
+
+
+/* LISTE DES SERVICES */
+
+.hero-card ul {
+  margin: 0;
+  padding: 0;
 }
 
 .hero-card li {
   list-style: none;
-  padding: 8px 0;
+
+  padding: 10px 0;
+
   color: #dbe4ef;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-card li:last-child {
+  padding-bottom: 0;
 }
 
 
@@ -292,8 +343,12 @@ h1 span {
 .contact-grid h2,
 .cta h2 {
   margin-bottom: 18px;
-  font-size: clamp(2rem, 3.5vw, 3.6rem);
+
+  font-size:
+    clamp(2rem, 3.5vw, 3.6rem);
+
   line-height: 1.08;
+
   letter-spacing: -0.04em;
 }
 
@@ -309,16 +364,24 @@ h1 span {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
   gap: 18px;
 }
 
 .card {
   min-height: 260px;
+
   padding: 30px;
+
   border: 1px solid var(--line);
+
   border-radius: 10px;
+
   background: #ffffff;
+
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
@@ -326,28 +389,39 @@ h1 span {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+
+  box-shadow:
+    0 16px 40px
+    rgba(15, 23, 42, 0.08);
 }
 
 .icon {
   width: 48px;
   height: 48px;
+
   display: grid;
   place-items: center;
+
   margin-bottom: 28px;
+
   border-radius: 8px;
+
   background: #fff3e9;
+
   color: var(--accent);
+
   font-size: 1.6rem;
 }
 
 .card h3 {
   margin-bottom: 10px;
+
   font-size: 1.15rem;
 }
 
 .card p {
   color: var(--muted);
+
   font-size: 0.92rem;
 }
 
@@ -358,44 +432,63 @@ h1 span {
 
 .dark {
   background: var(--bg);
+
   color: #ffffff;
 }
 
 .split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap: 80px;
+
   align-items: center;
 }
 
 .muted {
   max-width: 620px;
+
   color: #9baaba;
 }
 
 .check-list {
   display: grid;
+
   gap: 12px;
+
   margin-top: 32px;
+
   color: #dfe7ef;
 }
 
 .stats {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  grid-template-columns:
+    1fr 1fr;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.1);
 }
 
 .stat {
   min-height: 150px;
+
   padding: 34px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.06);
 }
 
 .stat strong {
   display: block;
+
   margin-bottom: 20px;
+
   color: var(--accent);
+
   font-size: 2rem;
 }
 
@@ -422,14 +515,19 @@ h1 span {
 
 .realisation-title {
   display: flex;
+
   align-items: center;
+
   gap: 20px;
+
   margin-bottom: 22px;
 }
 
 .realisation-title > span {
   color: #9aa4b2;
+
   font-size: 2rem;
+
   font-weight: 800;
 }
 
@@ -444,78 +542,80 @@ h1 span {
 
 .carousel {
   position: relative;
+
   width: 100%;
+
   max-width: 1000px;
+
   margin: 0 auto;
 }
 
-
-/*
-   Le carrousel n'a PLUS de hauteur fixe.
-
-   La hauteur est déterminée automatiquement
-   par la photo afin qu'elle soit visible
-   entièrement.
-*/
-
 .carousel-viewport {
   width: 100%;
-  overflow: hidden;
-  border-radius: 16px;
-  background: #ffffff;
-  box-shadow: 0 15px 45px rgba(15, 23, 42, 0.12);
-}
 
+  overflow: hidden;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 15px 45px
+    rgba(15, 23, 42, 0.12);
+}
 
 .carousel-track {
   display: flex;
-  width: 100%;
-  align-items: flex-start;
-  transition: transform 0.5s ease;
-}
 
+  width: 100%;
+
+  align-items: flex-start;
+
+  transition:
+    transform 0.5s ease;
+}
 
 .carousel-slide {
   flex: 0 0 100%;
+
   width: 100%;
   min-width: 100%;
+
   height: auto;
+
   display: flex;
+
   align-items: flex-start;
+
   justify-content: center;
+
   overflow: hidden;
+
   background: #ffffff;
 }
-
-
-/*
-   IMPORTANT
-
-   width: 100%
-   height: auto
-
-   = la photo conserve ses proportions
-   et n'est plus coupée.
-*/
 
 .carousel-slide img {
   display: block !important;
 
   width: 100% !important;
+
   height: auto !important;
 
   max-width: 100% !important;
 
   object-fit: contain !important;
-  object-position: center center !important;
 
-  background: #ffffff !important;
+  object-position:
+    center center !important;
+
+  background:
+    #ffffff !important;
 
   cursor: zoom-in;
 
-  transition: transform 0.35s ease;
+  transition:
+    transform 0.35s ease;
 }
-
 
 .carousel-slide img:hover {
   transform: scale(1.01);
@@ -523,7 +623,7 @@ h1 span {
 
 
 /* =========================================
-   FLECHES DU CARROUSEL
+   FLECHES CARROUSEL
 ========================================= */
 
 .carousel-btn {
@@ -537,32 +637,39 @@ h1 span {
   height: 52px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   padding: 0;
 
   border: none;
+
   border-radius: 50%;
 
-  background: rgba(4, 22, 39, 0.9);
+  background:
+    rgba(4, 22, 39, 0.9);
 
   color: #ffffff;
 
   font-size: 36px;
+
   line-height: 1;
 
   cursor: pointer;
 
-  transform: translateY(-50%);
+  transform:
+    translateY(-50%);
 
-  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.25);
+  box-shadow:
+    0 7px 25px
+    rgba(0, 0, 0, 0.25);
 
   transition:
     background 0.2s ease,
     transform 0.2s ease;
 }
-
 
 .carousel-btn:hover {
   background: var(--accent);
@@ -572,16 +679,13 @@ h1 span {
     scale(1.08);
 }
 
-
 .carousel-prev {
   left: 18px;
 }
 
-
 .carousel-next {
   right: 18px;
 }
-
 
 .carousel-counter {
   margin-top: 14px;
@@ -599,35 +703,39 @@ h1 span {
 
 
 /* =========================================
-   PHOTO EN GRAND
+   IMAGE EN GRAND
 ========================================= */
 
 .image-modal {
   position: fixed;
+
   inset: 0;
+
   z-index: 9999;
 
   display: none;
 
   align-items: center;
+
   justify-content: center;
 
   padding: 30px;
 
-  background: rgba(4, 7, 11, 0.95);
+  background:
+    rgba(4, 7, 11, 0.95);
 }
-
 
 .image-modal.active {
   display: flex;
 }
 
-
 .image-modal img {
   width: auto;
+
   height: auto;
 
   max-width: 94vw;
+
   max-height: 90vh;
 
   object-fit: contain;
@@ -635,14 +743,15 @@ h1 span {
   border-radius: 8px;
 }
 
-
 .image-modal-close {
   position: absolute;
 
   top: 20px;
+
   right: 30px;
 
   width: 50px;
+
   height: 50px;
 
   border: 0;
@@ -663,7 +772,9 @@ h1 span {
 
 .cta {
   padding: 60px 0;
+
   background: var(--accent);
+
   color: #ffffff;
 }
 
@@ -673,13 +784,18 @@ h1 span {
 
 .cta-inner {
   display: flex;
-  justify-content: space-between;
+
+  justify-content:
+    space-between;
+
   align-items: center;
+
   gap: 30px;
 }
 
 .btn-light {
   background: #ffffff;
+
   color: #111827;
 }
 
@@ -690,19 +806,26 @@ h1 span {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+
+  grid-template-columns:
+    0.8fr 1.2fr;
+
   gap: 70px;
 }
 
 .contact-items {
   display: grid;
+
   gap: 16px;
+
   margin-top: 36px;
 }
 
 .contact-items div {
   padding: 16px 0;
-  border-bottom: 1px solid var(--line);
+
+  border-bottom:
+    1px solid var(--line);
 }
 
 .contact-items span,
@@ -712,33 +835,50 @@ h1 span {
 
 .contact-items span {
   color: var(--muted);
+
   font-size: 0.75rem;
+
   text-transform: uppercase;
+
   letter-spacing: 0.12em;
 }
 
 .contact-form {
   display: grid;
+
   gap: 16px;
+
   padding: 30px;
-  border: 1px solid var(--line);
+
+  border:
+    1px solid var(--line);
+
   border-radius: 10px;
+
   background: #ffffff;
 }
 
 label {
   font-size: 0.9rem;
+
   font-weight: 700;
 }
 
 input,
 textarea {
   width: 100%;
+
   margin-top: 7px;
+
   padding: 14px;
-  border: 1px solid #cbd5e1;
+
+  border:
+    1px solid #cbd5e1;
+
   border-radius: 6px;
+
   background: #ffffff;
+
   font: inherit;
 }
 
@@ -757,39 +897,53 @@ small {
 
 footer {
   padding: 55px 0 30px;
+
   background: #070b10;
+
   color: #98a6b5;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+
+  grid-template-columns:
+    1.5fr 1fr 1fr;
+
   gap: 40px;
 }
 
 .footer-logo-image {
   width: 180px;
+
   max-height: 90px;
+
   object-fit: contain;
 }
 
 footer strong {
   display: block;
+
   margin-bottom: 12px;
+
   color: #ffffff;
 }
 
 footer a,
 footer span {
   display: block;
+
   margin: 6px 0;
+
   font-size: 0.9rem;
 }
 
 .footer-bottom {
   margin-top: 35px;
+
   padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.08);
 }
 
 
@@ -807,12 +961,14 @@ footer span {
     position: absolute;
 
     top: 88px;
+
     left: 0;
     right: 0;
 
     display: none;
 
     flex-direction: column;
+
     align-items: flex-start;
 
     padding: 20px 4%;
@@ -831,24 +987,28 @@ footer span {
   }
 
   .cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+      1fr 1fr;
   }
 
-  /*
-     Pas de hauteur fixe ici.
-     L'image garde ses proportions.
-  */
+  .hero-card {
+    min-height: auto;
+  }
+
+  .hero-card-content {
+    padding: 35px;
+  }
 
   .carousel-slide img {
     width: 100% !important;
+
     height: auto !important;
   }
-
 }
 
 
 /* =========================================
-   TELEPHONE
+   MOBILE
 ========================================= */
 
 @media (max-width: 560px) {
@@ -868,13 +1028,33 @@ footer span {
 
   .hero-grid {
     grid-template-columns: 1fr;
+
     padding: 65px 0;
   }
 
-  /*
-     Toujours aucune hauteur fixe.
-     Le montage complet reste visible.
-  */
+  .hero-card {
+    min-height: auto;
+  }
+
+  .hero-card-content {
+    padding: 26px;
+  }
+
+  .hero-logo {
+    width: 160px;
+
+    max-height: 90px;
+
+    margin-bottom: 18px;
+  }
+
+  .hero-card h2 {
+    font-size: 1.7rem;
+  }
+
+  .hero-card li {
+    padding: 9px 0;
+  }
 
   .carousel-viewport {
     border-radius: 12px;
@@ -882,12 +1062,15 @@ footer span {
 
   .carousel-slide img {
     width: 100% !important;
+
     height: auto !important;
   }
 
   .carousel-btn {
     width: 42px;
+
     height: 42px;
+
     font-size: 29px;
   }
 
@@ -909,11 +1092,11 @@ footer span {
 
   .cta-inner {
     flex-direction: column;
+
     align-items: flex-start;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
   }
-
 }
